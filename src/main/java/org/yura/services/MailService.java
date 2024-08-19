@@ -27,7 +27,6 @@ public class MailService {
             }
         });
 
-
         try {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(config.getProperty("mail.smtp.username")));

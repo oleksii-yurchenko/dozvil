@@ -19,11 +19,13 @@ public class FetchService {
                     String json = response.body();
                     ObjectMapper objectMapper = new ObjectMapper();
                     List<T> data;
+
                     try {
                         data = objectMapper.readValue(json, typeReference);
                     } catch (JsonProcessingException e) {
                         throw new RuntimeException(e);
                     }
+
                     return data;
                 });
     }
